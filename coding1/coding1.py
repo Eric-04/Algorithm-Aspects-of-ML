@@ -172,11 +172,11 @@ if __name__ == "__main__":
     sorted_doc_pairs.sort(key=lambda x: x[2], reverse=True)
 
     # Step 5: Save the highest "q" similar document pairs
-    with open('lhs_ans', 'w') as file:
+    with open('lsh_ans', 'w') as file:
         for pair in sorted_doc_pairs[:q]:
             file.write(f"{pair[0]} {pair[1]}\n")
     
-    with open('lhs_similarity', 'w') as file:
+    with open('lsh_similarity', 'w') as file:
         for pair in sorted_doc_pairs[:q]:
             file.write(f"{pair[0], pair[1], pair[2]}\n")
     print('Done!')
