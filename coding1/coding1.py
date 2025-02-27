@@ -116,7 +116,7 @@ def find_similarity(document_pairs, indices_to_documents, k):
     """
     Calculate Jaccard similarity for document pairs
     
-    :params document_pairs: list of tuples containing pairs of document titles
+    :params document_pairs: list of tuples containing pairs of document indices
     :params indices_to_documents: dictionary mapping document indices to document text
     :params k: size of the k-shingles
     
@@ -174,7 +174,7 @@ if __name__ == "__main__":
     # Step 5: Save the highest "q" similar document pairs
     with open('lhs_ans', 'w') as file:
         for pair in sorted_doc_pairs[:q]:
-            file.write(f"{pair[0], pair[1]}\n")
+            file.write(f"{pair[0]} {pair[1]}\n")
     
     with open('lhs_similarity', 'w') as file:
         for pair in sorted_doc_pairs[:q]:
